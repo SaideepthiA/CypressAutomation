@@ -1,0 +1,15 @@
+{
+  "chromeWebSecurity":false,
+  "defaultCommandTimeout":10000,
+  "pageLoadTimeout": 60000,
+
+  "testFiles": "**/*.feature",
+    "reporter": "mochawesome",
+    "reporterOptions": {
+      "reportDir": "cypress/reports",
+      "reportFilename":"report",
+      "html":true,
+      "json":true,
+      "charts": true
+    }
+  }

@@ -1,0 +1,222 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 1,
+    "pending": 0,
+    "failures": 5,
+    "start": "2021-12-26T22:54:05.802Z",
+    "end": "2021-12-26T22:54:58.089Z",
+    "duration": 52287,
+    "testsRegistered": 6,
+    "passPercent": 16.666666666666664,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d9ad4600-d77c-4f32-94c6-dc7936d622f0",
+      "title": "",
+      "fullFile": "cypress/integration/Register.feature",
+      "file": "cypress/integration/Register.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "79bea46f-d0b3-4ae8-927e-5827f57296f3",
+          "title": "Register New Customer",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "New Customer Registration - Page Navigation",
+              "fullTitle": "Register New Customer New Customer Registration - Page Navigation",
+              "timedOut": null,
+              "duration": 8983,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "5a1b71ef-0058-4033-935c-fda90afcda68",
+              "parentUUID": "79bea46f-d0b3-4ae8-927e-5827f57296f3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "New Customer Registration - Details validation",
+              "fullTitle": "Register New Customer New Customer Registration - Details validation",
+              "timedOut": null,
+              "duration": 6379,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "Error: Step implementation missing for: User enters all the details",
+                "estack": "Error: Step implementation missing for: User enters all the details\n    at Context.resolveAndRunStepDefinition (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:10546:11)\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:9861:35)",
+                "diff": null
+              },
+              "uuid": "998f6734-1204-4cc8-8c3f-d05aff601c41",
+              "parentUUID": "79bea46f-d0b3-4ae8-927e-5827f57296f3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "New Customer Registration - Successful Registration",
+              "fullTitle": "Register New Customer New Customer Registration - Successful Registration",
+              "timedOut": null,
+              "duration": 5584,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "Error: Step implementation missing for: User enters all the details",
+                "estack": "Error: Step implementation missing for: User enters all the details\n    at Context.resolveAndRunStepDefinition (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:10546:11)\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:9861:35)",
+                "diff": null
+              },
+              "uuid": "9d0eda46-1318-444d-87dc-de21605f57d3",
+              "parentUUID": "79bea46f-d0b3-4ae8-927e-5827f57296f3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "New Customer Registration - Already Registered Customer",
+              "fullTitle": "Register New Customer New Customer Registration - Already Registered Customer",
+              "timedOut": null,
+              "duration": 6520,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "Error: Step implementation missing for: User enters all the details",
+                "estack": "Error: Step implementation missing for: User enters all the details\n    at Context.resolveAndRunStepDefinition (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:10546:11)\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:9861:35)",
+                "diff": null
+              },
+              "uuid": "ab6ed354-5487-4ca4-b276-093069073c3a",
+              "parentUUID": "79bea46f-d0b3-4ae8-927e-5827f57296f3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "New Customer Registration - Mandatory Fields",
+              "fullTitle": "Register New Customer New Customer Registration - Mandatory Fields",
+              "timedOut": null,
+              "duration": 7540,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "Error: Step implementation missing for: User misses mandatory Fields",
+                "estack": "Error: Step implementation missing for: User misses mandatory Fields\n    at Context.resolveAndRunStepDefinition (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:10546:11)\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:9861:35)",
+                "diff": null
+              },
+              "uuid": "52cc4ff0-f7e4-4803-93d8-b445e855b8ae",
+              "parentUUID": "79bea46f-d0b3-4ae8-927e-5827f57296f3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "New Customer Registration - Invalid Email Id",
+              "fullTitle": "Register New Customer New Customer Registration - Invalid Email Id",
+              "timedOut": null,
+              "duration": 5549,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "Error: Step implementation missing for: User enters all the details",
+                "estack": "Error: Step implementation missing for: User enters all the details\n    at Context.resolveAndRunStepDefinition (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:10546:11)\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress\\integration\\Register.feature:9861:35)",
+                "diff": null
+              },
+              "uuid": "0f54b453-5bc0-413f-bafa-d61fd5761a2d",
+              "parentUUID": "79bea46f-d0b3-4ae8-927e-5827f57296f3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5a1b71ef-0058-4033-935c-fda90afcda68"
+          ],
+          "failures": [
+            "998f6734-1204-4cc8-8c3f-d05aff601c41",
+            "9d0eda46-1318-444d-87dc-de21605f57d3",
+            "ab6ed354-5487-4ca4-b276-093069073c3a",
+            "52cc4ff0-f7e4-4803-93d8-b445e855b8ae",
+            "0f54b453-5bc0-413f-bafa-d61fd5761a2d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 40555,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
