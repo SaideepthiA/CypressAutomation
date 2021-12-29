@@ -23,27 +23,19 @@ And('User is successfully navigated to RegisterPage',()=>{
 
 })
 
-And('User enters all the details',()=>{
+And('User enters all the details',(datatable)=>{
+    
     RegisterPage.selectGenderfemale()
-    RegisterPage.enterFirstName('Saideepthi')
-    RegisterPage.enterLastName('Anivireddi')
-    RegisterPage.selectDateOfBirth('19','June','1995')
-    RegisterPage.enterEmail('abcdedf@gmail.com')
-    RegisterPage.enterPassword('Deepu@345')
+    datatable.hashes().forEach(element=>{
+    RegisterPage.enterFirstName(element.FirstName)
+    RegisterPage.enterLastName(element.LastName)
+    RegisterPage.selectDateOfBirth(element.Day,element.Month,element.Year)
+    RegisterPage.enterEmail(element.email)
+    RegisterPage.enterPassword(element.Password)
+    })
+    
     
 
-})
-And('User Validate all the entered details',()=>{
- 
-    RegisterPage.details.genderfemale().should('be.checked')
-    RegisterPage.details.firstNameInput().should('have.value','Saideepthi')
-    RegisterPage.details.lastNameInput().should('have.value','Anivireddi')
-    RegisterPage.details.birthdaySelect().should('have.value','19')
-    RegisterPage.details.birthMonthSelect().should('have.value','6')
-    RegisterPage.details.birthYearSelect().should('have.value','1995')
-    RegisterPage.details.emailInput().should('have.value','abcdedf@gmail.com')
-    
-    
 })
 
 When('User click on Register button',()=>{
@@ -54,15 +46,22 @@ Then('Registration is successful',()=>{
     RegisterPage.successfulRegistration()
 })
 
-But('User enters already registered email id',()=>{
-    RegisterPage.enterEmail('anivireddisaideepthi1995@gmail.com')
+But('User enters already registered email id',(datatable)=>{
+    RegisterPage.selectGenderfemale()
+    datatable.hashes().forEach(element=>{
+    RegisterPage.enterFirstName(element.FirstName)
+    RegisterPage.enterLastName(element.LastName)
+    RegisterPage.selectDateOfBirth(element.Day,element.Month,element.Year)
+    RegisterPage.enterEmail(element.email)
+    RegisterPage.enterPassword(element.Password)
+    })
 })
 
 Then('User must receive already registered Error message',()=>{
     RegisterPage.alreadyRegistered()
 })
 
-Then('User must receive Mandatory field Error message',()=>{
+Then('User must receive Mandatory field Error message',(datatable)=>{
     RegisterPage.messages.firstNameError().should('have.text','First name is required.')
     RegisterPage.messages.lastNameError().should('have.text','Last name is required.')
     RegisterPage.messages.emailError().should('have.text','Email is required.')
@@ -70,9 +69,15 @@ Then('User must receive Mandatory field Error message',()=>{
     RegisterPage.messages.confirmPasswordError().should('have.text','Password is required.')
     
 })
-But ('User enters invalid format of email and password',()=>{
-    RegisterPage.enterEmail('abcd')
-    RegisterPage.enterPassword('1234')
+But ('User enters invalid format of email and password',(datatable)=>{
+    RegisterPage.selectGenderfemale()
+    datatable.hashes().forEach(element=>{
+    RegisterPage.enterFirstName(element.FirstName)
+    RegisterPage.enterLastName(element.LastName)
+    RegisterPage.selectDateOfBirth(element.Day,element.Month,element.Year)
+    RegisterPage.enterEmail(element.email)
+    RegisterPage.enterPassword(element.Password)
+    })
 })
 
 Then('User must be displayed with Format Error message',()=>{
@@ -86,4 +91,9 @@ But('User enters wrong confirm password',()=>{
 
 Then('User must be displayed with Invalid confirm password Error message',()=>{
     RegisterPage.messages.confirmPasswordError().should('have.text','The password and confirmation password do not match.')
+})
+
+And('User enters email as {string} and password as {string}',(email,password)=>{
+    RegisterPage.enterEmail(email)
+    RegisterPage.enterPassword(password)
 })

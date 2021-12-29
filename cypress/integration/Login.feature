@@ -1,45 +1,41 @@
-Feature: Register New Customer
+Feature: Customer Login
+
+    Background: User Navigate to login page
+        Given User Navigate to the website
+        When User navigate to Login page
+
+    @SmokeTesting @RegressionTesting
+    Scenario: Customer Login - Page Navigation 
+        Then User is successfully navigated to LoginPage
+
+    Scenario: Customer Login - New customer
+        And User enters email id which is not registered
+        When User clicks on Login button
+        Then Login must be unsuccessfull
+        
+    @SmokeTesting @RegressionTesting
+    Scenario: Customer Login - Successful login
+        When User enters email and password
+        When User clicks on Login button
+        Then Login is successful
 
 
-    Registering a New Customer
 
-    Scenario: Customer Login - Page Navigation
-    Given User Navigate to the website
-    When User navigate to Login page 
-    Then User is successfully navigated to LoginPage
+    Scenario: Customer Login - Mandatory Fields
+        When User clicks on Login button
+        Then User must receive Mandatory field Error message
 
-    Scenario: Customer Login - Details validation
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User enters all the details
-    And User Validate all the entered details
+    Scenario: Customer Login - Invalid Email Id
+        And User enters email and password
+        But User enters invalid email id
+        When User clicks on Login button
+        Then User must be displayed with Email Error message
 
-    Scenario: New Customer Registration - Successful Registration
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User enters all the details
-    When User click on Register button
-    Then Registration is successful
-
-    Scenario: New Customer Registration - Already Registered Customer
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User enters all the details
-    But User enters already registered email id
-    When User click on Register button
-    Then Registration must be unsuccessfull
-
-    Scenario: New Customer Registration - Mandatory Fields
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User misses mandatory Fields
-    When User click on Register button
-    Then User must receive Mandatory field Error message
-
-    Scenario: New Customer Registration - Invalid Email Id
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User enters all the details
-    But User enters already registered email id
-    When User click on Register button
-    Then User must be displayed with Email Error message
+    Scenario Outline: Multiple customers Login
+        And User enters email as "<email>" and password as "<password>"
+        When User clicks on Login button
+        Then Login is successful
+        Examples: 
+        |email||password|
+        |test123@gmail.com||test@1234|
+        |test345@gmail.com||test@6789|
