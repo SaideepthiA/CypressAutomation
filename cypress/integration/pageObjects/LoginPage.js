@@ -8,7 +8,7 @@ class LoginPage{
         myAccountLink:()=>cy.get('.ico-account')
     }
 
-    button ={
+    button ={ 
         loginButton:()=>cy.get('form>div:nth-child(3)>button').contains('Log in'),
         registerButton:()=>cy.get('.new-wrapper>div:nth-child(3)>button').contains('Register'),
         logoutButton:()=>cy.get('.ico-logout')

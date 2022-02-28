@@ -3,23 +3,17 @@ Feature: Register New Customer
 
     Registering a New Customer
 
-    Scenario: New Customer Registration - Page Navigation
+    Scenario: New Customer Registration - Page login
     Given User Navigate to the website
     When User navigate to Register page 
-    Then User is successfully navigated to RegisterPage
+    Then Verify the response status and response body
 
-    Scenario: New Customer Registration - Details validation
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User enters all the details
-    And User Validate all the entered details
 
     Scenario: New Customer Registration - Successful Registration
     Given User Navigate to the website
     When User navigate to Register page
     And User enters all the details
-    When User click on Register button
-    Then Registration is successful
+    Then Verify the POST request and response
 
     Scenario: New Customer Registration - Already Registered Customer
     Given User Navigate to the website
