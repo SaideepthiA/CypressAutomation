@@ -1,39 +1,36 @@
-Feature: Register New Customer
+Feature: API Automation
 
 
-    Registering a New Customer
+    Automation of API's of the Application
 
-    Scenario: New Customer Registration - Page login
-    Given User Navigate to the website
-    When User navigate to Register page 
-    Then Verify the response status and response body
+    Scenario: GET API to open the page
+    Given Trigger Get call
+    Then users are fetched
 
+    Scenario: POST API to register
+    Given Trigger POST call
+    Then user is registered 
 
-    Scenario: New Customer Registration - Successful Registration
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User enters all the details
-    Then Verify the POST request and response
+    Scenario: PUT API to edit
+    Given Trigger PUT call
+    Then user details are edited
 
-    Scenario: New Customer Registration - Already Registered Customer
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User enters all the details
-    But User enters already registered email id
-    When User click on Register button
-    Then Registration must be unsuccessfull
+    Scenario: DELETE API to delete
+    Given Trigger Delete call
+    Then user details are deleted
 
-    Scenario: New Customer Registration - Mandatory Fields
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User misses mandatory Fields
-    When User click on Register button
-    Then User must receive Mandatory field Error message
+    Scenario: No Input -POST 
+    Given Trigger POST Call with no inputs
+    Then Verify the error message
 
-    Scenario: New Customer Registration - Invalid Email Id
-    Given User Navigate to the website
-    When User navigate to Register page
-    And User enters all the details
-    But User enters already registered email id
-    When User click on Register button
-    Then User must be displayed with Email Error message
+    Scenario: Already registered mail - POST 
+    Given Trigger POST call with already used mail id
+    Then verify email error message
+
+    Scenario: Missing Parameters - POST
+    Given Trigger POST call with missing parameters 
+    Then verify the missing parameters error message
+
+    Scenario: InvalidInputs - GET 
+    Given Trigger GET call with invalid inputs
+    Then Verify the invalid error message

@@ -3,7 +3,7 @@
   "defaultCommandTimeout":10000,
   "pageLoadTimeout": 60000,
 
-  "testFiles": ["Register.feature","Login.feature"],
+  "testFiles": ["Register.feature","Login.feature","API_Automation.feature"],
     "reporter": "mochawesome",
     "reporterOptions": {
       "reportDir": "cypress/reports",

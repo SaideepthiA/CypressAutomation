@@ -19,10 +19,10 @@ class commonFunctions{
        return lastname
     }
     emailIdGenerator(){
-        firstname= this.firstname();
-        lastname=this.lastName();
-        var temp1= firstname.substr(0,4);
-        var temp2 = lastname.substr(0,4);
+        var firstname= this.firstname();
+        var lastname=this.lastName();
+        var temp1= firstname.substring(0,4);
+        var temp2 = lastname.substring(0,4);
         var emailId = temp1.concat(temp2,"@gmail.com");
         return emailId;
     }
@@ -39,3 +39,4 @@ class commonFunctions{
 
     
 }
+module.exports = new commonFunctions();
