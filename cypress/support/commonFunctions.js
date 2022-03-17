@@ -38,5 +38,6 @@ class commonFunctions{
     }
 
     
+    
 }
 module.exports = new commonFunctions();

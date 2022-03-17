@@ -7,6 +7,14 @@ Feature: API Automation
     Given Trigger Get call
     Then users are fetched
 
+    Scenario: Multiple values validation - GET
+    Given Trigger Get call
+    Then verify all the users fetched
+
+    Scenario: Multiple users validation using excel file - GET
+    Given Trigger Get call
+    Then verify all the users fetched using input from excel file
+
     Scenario: POST API to register
     Given Trigger POST call
     Then user is registered 
@@ -34,3 +42,5 @@ Feature: API Automation
     Scenario: InvalidInputs - GET 
     Given Trigger GET call with invalid inputs
     Then Verify the invalid error message
+
+    

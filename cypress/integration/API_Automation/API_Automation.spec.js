@@ -67,3 +67,11 @@ Given('Trigger GET call with invalid inputs',()=>{
 Then('Verify the invalid error message',()=>{
     APIPage.verifyInvalidErrorMessage()
 })
+
+Then('verify all the users fetched',()=>{
+    APIPage.verifyAllUsers("cypress/fixtures/usersapi.json")
+})
+Then ('verify all the users fetched using input from excel file',()=>{
+    APIPage.generateJsonFromExcel();
+    APIPage.verifyAllUsers("cypress/fixtures/datajson.json")
+})

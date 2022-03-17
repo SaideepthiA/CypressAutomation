@@ -6,10 +6,10 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:Smoke":"npx cypress-tags run -e TAGS= '@SmokeTesting'",
-    "cy:run:regression":"npx cypress-tags run -e TAGS = '@RegressionTesting",
-    "cy:run:headed":"npx cypress run --headed",
-    "cy:repor:merge":"npx mochawesome-merge cypress/reports/report.json -o output.json"
+    "cy:Smoke": "npx cypress-tags run -e TAGS='@SmokeTesting'",
+    "cy:run:regression": "npx cypress-tags run -e TAGS='@RegressionTesting'",
+    "cy:run:headed": "npx cypress run --headed",
+    "cy:repor:merge": "npx mochawesome-merge cypress/reports/report.json -o output.json"
   },
   "author": "",
   "license": "ISC",
@@ -17,11 +17,17 @@
     "cypress": "^9.2.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-mochawesome-reporter": "^2.3.0",
+    "cypress-xpath": "^1.6.2",
     "mochawesome": "^7.0.1",
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^6.0.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
+  },
+  "dependencies": {
+    "cypress-plugin-snapshots": "^1.4.4",
+    "json-diff": "^0.7.3",
+    "xlsx": "^0.18.3"
   }
 }

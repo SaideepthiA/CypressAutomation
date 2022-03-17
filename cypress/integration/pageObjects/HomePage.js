@@ -4,7 +4,8 @@ navigateToURL(){
 }
 
 registerNewCustomer(){
-    cy.get('.ico-register').click()
+    //cy.get('.ico-register').click()
+    cy.xpath('/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a').click();
 }
 
 loginAsCustomer(){

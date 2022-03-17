@@ -22,6 +22,19 @@ module.exports = (on, config) => {
 }
 const cucumber = require('cypress-cucumber-preprocessor').default
 
-module.exports = (on, config) => {
-  on('file:preprocessor', cucumber())
+const xlsx = require("xlsx");
+
+
+
+module.exports = (on, config)=>{
+  on('task',{
+    generateJsonFile({filepath,sheetname}){
+      const wb = xlsx.readFile(filepath,{type:'binary'});
+      const ws= wb.Sheets[sheetname];
+      return xlsx.utils.sheet_to_json(ws);
+  }
+}),
+on('file:preprocessor', cucumber())
 }
+
+

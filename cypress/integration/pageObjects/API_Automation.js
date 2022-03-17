@@ -1,5 +1,9 @@
-import common from "mocha/lib/interfaces/common";
+
 import commonfunctions from "../../support/commonFunctions"
+
+
+ 
+
 class API_Automation {
 
 
@@ -249,7 +253,36 @@ class API_Automation {
     verifyInvalidErrorMessage(){
         cy.readFile("cypress//fixtures//getresponse.json").then((res)=>{
             expect(res.body.message).to.eq("Resource not found")
-        })    }
+        })    
+    }
+    
+    verifyAllUsers(file1){
+        cy.readFile(file1).then((expec)=>{
+            var expecres = JSON.stringify(expec)
+            cy.request({
+                
+                    method: 'GET',
+                    url: 'https://gorest.co.in/public/v2/users/',
+                    headers: {
+                        authorization: "Bearer " + this.accessToken
+                    }
+            }).then((actual)=>{
+                
+                var actres = JSON.stringify(actual.body);
+                assert.deepEqual(expecres,actres);
+                
+            })
+        })
+    }
+    generateJsonFromExcel(){
+        const filepath = "cypress/fixtures/data.xlsx";
+        const sheetname = "users";
+      cy.task("generateJsonFile",{filepath,sheetname}).then((data)=>{
+          cy.log(data)
+          cy.writeFile("cypress/fixtures/datajson.json",data);
 
+      })
+    }
+    
 }
 module.exports = new API_Automation;
